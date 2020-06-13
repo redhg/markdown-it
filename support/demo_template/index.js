@@ -6,7 +6,7 @@
 var mdurl = require('mdurl');
 
 
-var hljs = require('highlight.js/lib/highlight.js');
+var hljs = require('highlight.js/lib/core');
 
 hljs.registerLanguage('actionscript', require('highlight.js/lib/languages/actionscript'));
 hljs.registerLanguage('apache',       require('highlight.js/lib/languages/apache'));
@@ -18,6 +18,8 @@ hljs.registerLanguage('bash',         require('highlight.js/lib/languages/bash')
 hljs.registerLanguage('clojure',      require('highlight.js/lib/languages/clojure'));
 hljs.registerLanguage('cmake',        require('highlight.js/lib/languages/cmake'));
 hljs.registerLanguage('coffeescript', require('highlight.js/lib/languages/coffeescript'));
+hljs.registerLanguage('c-like',       require('highlight.js/lib/languages/c-like'));
+hljs.registerLanguage('c',            require('highlight.js/lib/languages/c'));
 hljs.registerLanguage('cpp',          require('highlight.js/lib/languages/cpp'));
 hljs.registerLanguage('arduino',      require('highlight.js/lib/languages/arduino'));
 hljs.registerLanguage('css',          require('highlight.js/lib/languages/css'));
@@ -35,6 +37,7 @@ hljs.registerLanguage('ini',          require('highlight.js/lib/languages/ini'))
 hljs.registerLanguage('java',         require('highlight.js/lib/languages/java'));
 hljs.registerLanguage('javascript',   require('highlight.js/lib/languages/javascript'));
 hljs.registerLanguage('json',         require('highlight.js/lib/languages/json'));
+hljs.registerLanguage('latex',         require('highlight.js/lib/languages/latex'));
 hljs.registerLanguage('less',         require('highlight.js/lib/languages/less'));
 hljs.registerLanguage('lisp',         require('highlight.js/lib/languages/lisp'));
 hljs.registerLanguage('livescript',   require('highlight.js/lib/languages/livescript'));
@@ -55,7 +58,6 @@ hljs.registerLanguage('smalltalk',    require('highlight.js/lib/languages/smallt
 hljs.registerLanguage('stylus',       require('highlight.js/lib/languages/stylus'));
 hljs.registerLanguage('swift',        require('highlight.js/lib/languages/swift'));
 hljs.registerLanguage('tcl',          require('highlight.js/lib/languages/tcl'));
-hljs.registerLanguage('tex',          require('highlight.js/lib/languages/tex'));
 hljs.registerLanguage('typescript',   require('highlight.js/lib/languages/typescript'));
 hljs.registerLanguage('verilog',      require('highlight.js/lib/languages/verilog'));
 hljs.registerLanguage('vhdl',         require('highlight.js/lib/languages/vhdl'));
@@ -130,25 +132,25 @@ function mdInit() {
     mdSrc = window.markdownit('commonmark');
   } else {
     mdHtml = window.markdownit(defaults)
-                .use(require('markdown-it-abbr'))
-                .use(require('markdown-it-container'), 'warning')
-                .use(require('markdown-it-deflist'))
-                .use(require('markdown-it-emoji'))
-                .use(require('markdown-it-footnote'))
-                .use(require('markdown-it-ins'))
-                .use(require('markdown-it-mark'))
-                .use(require('markdown-it-sub'))
-                .use(require('markdown-it-sup'));
+      .use(require('markdown-it-abbr'))
+      .use(require('markdown-it-container'), 'warning')
+      .use(require('markdown-it-deflist'))
+      .use(require('markdown-it-emoji'))
+      .use(require('markdown-it-footnote'))
+      .use(require('markdown-it-ins'))
+      .use(require('markdown-it-mark'))
+      .use(require('markdown-it-sub'))
+      .use(require('markdown-it-sup'));
     mdSrc = window.markdownit(defaults)
-                .use(require('markdown-it-abbr'))
-                .use(require('markdown-it-container'), 'warning')
-                .use(require('markdown-it-deflist'))
-                .use(require('markdown-it-emoji'))
-                .use(require('markdown-it-footnote'))
-                .use(require('markdown-it-ins'))
-                .use(require('markdown-it-mark'))
-                .use(require('markdown-it-sub'))
-                .use(require('markdown-it-sup'));
+      .use(require('markdown-it-abbr'))
+      .use(require('markdown-it-container'), 'warning')
+      .use(require('markdown-it-deflist'))
+      .use(require('markdown-it-emoji'))
+      .use(require('markdown-it-footnote'))
+      .use(require('markdown-it-ins'))
+      .use(require('markdown-it-mark'))
+      .use(require('markdown-it-sub'))
+      .use(require('markdown-it-sup'));
   }
 
   // Beautify output of parser for html content
